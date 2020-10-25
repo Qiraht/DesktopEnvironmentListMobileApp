@@ -16,6 +16,11 @@ import java.util.ArrayList;
 
 public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListViewHolder> {
     private ArrayList<Item> listItem;
+    private OnItemClickCallback onItemClickCallback;
+
+    void setOnItemClickCallback(OnItemClickCallback onItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback;
+    }
 
     public ListItemAdapter(ArrayList<Item> list) {
         this.listItem = list;
@@ -37,6 +42,14 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListVi
                 .into(holder.imgPhoto);
         holder.tvName.setText(item.getName());
         holder.tvDetail.setText(item.getDetail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                onItemClickCallback.onItemClicked(listItem.get(holder.getAdapterPosition()));
+            }
+        });
     }
 
     @Override
@@ -55,5 +68,9 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ListVi
             tvName = itemView.findViewById(R.id.tv_item_name);
             tvDetail = itemView.findViewById(R.id.tv_item_detail);
         }
+    }
+
+    public interface OnItemClickCallback {
+        void onItemClicked(Item data);
     }
 }

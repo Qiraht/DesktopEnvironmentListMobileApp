@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -27,10 +28,22 @@ public class MainActivity extends AppCompatActivity {
         showRecyclerList();
     }
 
+    private void showSelectedItem(Item item) {
+        Toast.makeText(this,"Kamu memilih" + item.getName(), Toast.LENGTH_SHORT).show();
+    }
+
     private void showRecyclerList() {
         rvItem.setLayoutManager(new LinearLayoutManager(this));
         ListItemAdapter listItemAdapter = new ListItemAdapter(list);
         rvItem.setAdapter(listItemAdapter);
+
+        listItemAdapter.setOnItemClickCallback(new ListItemAdapter.OnItemClickCallback()
+        {
+            @Override
+            public void onItemClicked(Item data) {
+                showSelectedItem(data);
+            }
+        });
     }
 
     @Override
