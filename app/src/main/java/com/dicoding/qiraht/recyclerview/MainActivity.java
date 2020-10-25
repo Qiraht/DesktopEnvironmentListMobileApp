@@ -19,13 +19,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //experimenting
         setContentView(R.layout.activity_main);
+
+        if (getActionBar() != null) {
+            getSupportActionBar().setTitle("DE");
+        }
 
         rvItem = findViewById(R.id.rv_main);
         rvItem.setHasFixedSize(true);
 
         list.addAll(ItemsData.getListData());
         showRecyclerList();
+
+
     }
 
     private void showSelectedItem(Item item) {
