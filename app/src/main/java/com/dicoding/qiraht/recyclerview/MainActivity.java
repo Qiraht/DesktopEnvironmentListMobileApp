@@ -20,11 +20,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //experimenting
-        setContentView(R.layout.activity_main);
-
-        if (getActionBar() != null) {
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("DE");
         }
+        setContentView(R.layout.activity_main);
 
         rvItem = findViewById(R.id.rv_main);
         rvItem.setHasFixedSize(true);
