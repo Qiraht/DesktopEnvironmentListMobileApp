@@ -3,4 +3,7 @@
     <string name="item_name">Nama Item</string>
     <string name="detail">Detail</string>
     <string name="about">About</string>
+    <!--Below is for About data-->
+    <string name="about_name">Thariq Aulia Akbar</string>
+    <string name="about_email">thariq.2712@students.amikom.ac.id</string>
 </resources>
