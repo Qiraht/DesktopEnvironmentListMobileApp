@@ -48,6 +48,7 @@
             android:ellipsize="end"
             android:text="@string/about_email"
             android:textSize="14sp"
+            android:autoLink="email"
             android:gravity="center" />
     </LinearLayout>
 </RelativeLayout>
