@@ -3,8 +3,10 @@ package com.dicoding.qiraht.recyclerview;
 public class Item {
     private String name;
     private String detail;
-    private int photo;
 
+    private String link;
+
+    private int photo;
     public String getName() {
         return name;
     }
@@ -20,6 +22,10 @@ public class Item {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+    public String getLink() { return link; }
+
+    public void setLink(String link) { this.link = link;  }
 
     public int getPhoto() {
         return photo;

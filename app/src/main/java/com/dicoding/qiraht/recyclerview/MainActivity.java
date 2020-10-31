@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //experimenting
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("DE");
+            getSupportActionBar().setTitle("Desktop List");
         }
         setContentView(R.layout.activity_main);
 
@@ -35,7 +36,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSelectedItem(Item item) {
-        Toast.makeText(this,"Kamu memilih" + item.getName(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Kamu memilih " + item.getName(), Toast.LENGTH_SHORT).show();
+        Intent move = new Intent(MainActivity.this, DetailActivity.class);
+        move.putExtra("name",item.getName());
+        move.putExtra("detail",item.getDetail());
+        move.putExtra("photo",item.getPhoto());
+        move.putExtra("repo", item.getLink());
+        startActivity(move);
     }
 
     private void showRecyclerList() {
