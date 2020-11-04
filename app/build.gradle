@@ -10,8 +10,8 @@ android {
         applicationId "com.dicoding.qiraht.recyclerview"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "Endeavour"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
